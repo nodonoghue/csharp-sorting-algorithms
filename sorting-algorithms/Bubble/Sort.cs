@@ -8,6 +8,11 @@ namespace sorting_algorithms.Bubble
 {
     public static class Sort
     {
+        /// <summary>
+        /// Bubble sort in ascending order
+        /// </summary>
+        /// <param name="inAry"></param>
+        /// <returns></returns>
         public static int[] Ascending(int[] inAry)
         {
             bool swapped;
@@ -21,6 +26,34 @@ namespace sorting_algorithms.Bubble
                 for (int j = 0; j < inAry.Length - 1 - i; j++)
                 {
                     if (inAry[j] > inAry[j + 1])
+                    {
+                        swapped = true;
+                        swapValue = inAry[j];
+                        inAry[j] = inAry[j + 1];
+                        inAry[j + 1] = swapValue;
+                    }
+                }
+                if (swapped == false) break;
+
+            }
+            return inAry;
+        }
+
+        /// <summary>
+        /// Bubble sort in descending order
+        /// </summary>
+        /// <param name="inAry"></param>
+        /// <returns></returns>
+        public static int[] Descending(int[] inAry)
+        {
+            bool swapped;
+            int swapValue;
+            for (int i = 0; i < inAry.Length - 1; i++)
+            {
+                swapped = false;
+                for (int j = 0; j < inAry.Length - 1 - i; j++)
+                {
+                    if (inAry[j] < inAry[j + 1])
                     {
                         swapped = true;
                         swapValue = inAry[j];
