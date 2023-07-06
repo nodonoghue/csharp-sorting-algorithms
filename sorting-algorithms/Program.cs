@@ -3,19 +3,34 @@ using System.Runtime.ExceptionServices;
 
 int[] inAry = new int[10] { 9, 3, 6, 4, 8, 12, 54, 23, 1, 5 };
 
-Console.Write("Starting array");
+Console.Write("Starting array: ");
 foreach (int i in inAry) Console.Write(i.ToString() + ", ");
+Console.WriteLine();
 Console.WriteLine();
 
 Console.WriteLine("Bubble Sort");
+sorting_algorithms.Bubble.Sort bubbleSort = new();
 Console.WriteLine("-------------------------------------");
 Console.WriteLine("Asending Order:");
-int[] ascInAry = inAry;
-int[] resultAsc = sorting_algorithms.Bubble.Sort.Ascending(ascInAry);
-foreach (int i in resultAsc) Console.Write(i.ToString() + ", ");
+int[] bubbleResultAsc = bubbleSort.Ascending(inAry);
+foreach (int i in bubbleResultAsc) Console.Write(i.ToString() + ", ");
 
-Console.WriteLine("");
+Console.WriteLine();
 Console.WriteLine("Descending order:");
-int[] descInAry = inAry;
-int[] resultDesc = sorting_algorithms.Bubble.Sort.Descending(descInAry);
-foreach (int i in resultDesc) Console.Write(i.ToString()+", ");
+int[] bubbleResultDesc = bubbleSort.Descending(inAry);
+foreach (int i in bubbleResultDesc) Console.Write(i.ToString()+", ");
+Console.WriteLine();
+Console.WriteLine();
+
+Console.WriteLine("Selection Sort");
+sorting_algorithms.Selection.Sort selectionSort = new();
+Console.WriteLine("-------------------------------------");
+Console.WriteLine("Asending Order:");
+int[] selectionResultAsc = selectionSort.Ascending(inAry);
+foreach (int i in selectionResultAsc) Console.Write(i.ToString() + ", ");
+Console.WriteLine();
+Console.WriteLine("Descending Order:");
+int[] selectionResultDesc = selectionSort.Descending(inAry);
+foreach (int i in selectionResultDesc) Console.Write(i.ToString() + ", ");
+Console.WriteLine();
+Console.WriteLine();

@@ -15,14 +15,14 @@ namespace sorting_algorithms.Bubble
     /// right on each run.  As the name suggests, the largers number (ascending order) or smallest (descending order) will 
     /// bubble up to the top (right) of the array for each run.
     /// </summary>
-    public static class Sort
+    public class Sort : Interfaces.ISort
     {
         /// <summary>
         /// Bubble sort in ascending order
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public static int[] Ascending(int[] inAry)
+        public int[] Ascending(int[] inAry)
         {
             bool swapped;
             int swapValue;
@@ -49,7 +49,7 @@ namespace sorting_algorithms.Bubble
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public static int[] Descending(int[] inAry)
+        public int[] Descending(int[] inAry)
         {
             bool swapped;
             int swapValue;
