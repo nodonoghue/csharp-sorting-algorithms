@@ -40,7 +40,7 @@ namespace sorting_algorithms.Merge
 
         /// <summary>
         /// This method is called recursively to split the array into smaller and smaller chunks, 
-        /// unsure how this will exit the recursion loop though.
+        /// recursion stops when arrLength == 1
         /// </summary>
         /// <param name="inAry"></param>
         /// <param name="leftIndex"></param>
