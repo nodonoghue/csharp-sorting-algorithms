@@ -52,3 +52,18 @@ foreach (int i in inAry) Console.Write(i.ToString() + ", ");
 inAry = new int[10] { 9, 3, 6, 4, 8, 12, 54, 23, 1, 5 };
 Console.WriteLine();
 Console.WriteLine();
+
+Console.WriteLine("Merge Sort");
+sorting_algorithms.Merge.Sort mergeSort = new();
+Console.WriteLine("-------------------------------------");
+Console.WriteLine("Asending Order:");
+mergeSort.Ascending(inAry);
+foreach (int i in inAry) Console.Write(i.ToString() + ", ");
+inAry = new int[10] { 9, 3, 6, 4, 8, 12, 54, 23, 1, 5 };
+Console.WriteLine();
+Console.WriteLine("Descending Order:");
+mergeSort.Descending(inAry);
+foreach (int i in inAry) Console.Write(i.ToString() + ", ");
+inAry = new int[10] { 9, 3, 6, 4, 8, 12, 54, 23, 1, 5 };
+Console.WriteLine();
+Console.WriteLine();
