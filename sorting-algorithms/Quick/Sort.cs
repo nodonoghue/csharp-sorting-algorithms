@@ -11,6 +11,8 @@ namespace sorting_algorithms.Quick
     /// The array is iterated through putting all elements larger to the right of the pivote and
     /// all elements smaller to the left of the pivot, placing the pivot in the correct spot.
     /// Recursively rinse and repeat until all elements have been put into the correct places.
+    /// This is done by splitting the array on the pivot into partitions, each partition is 
+    /// sent through the pivot to partition code.
     /// </summary>
     internal class Sort : Interfaces.ISort
     {
