@@ -67,3 +67,11 @@ foreach (int i in inAry) Console.Write(i.ToString() + ", ");
 inAry = new int[10] { 9, 3, 6, 4, 8, 12, 54, 23, 1, 5 };
 Console.WriteLine();
 Console.WriteLine();
+
+Console.WriteLine("Quick Sort");
+sorting_algorithms.Quick.Sort quickSort = new();
+Console.WriteLine("-------------------------------------");
+Console.WriteLine("Asending Order:");
+quickSort.Ascending(inAry);
+foreach (int i in inAry) Console.Write(i.ToString() + ", ");
+inAry = new int[10] { 9, 3, 6, 4, 8, 12, 54, 23, 1, 5 };
