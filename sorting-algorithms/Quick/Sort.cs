@@ -64,18 +64,26 @@ namespace sorting_algorithms.Quick
             //Switch(pivotIndex, endIndex, inAry);
 
             //Create the partition and place the pivot into the correct spot
-            Partition(startIndex, endIndex, pivot, inAry);
+            int leftPointer = Partition(startIndex, endIndex, pivot, inAry);
+
+
+            //Send the left and right sections through the Quicksorting flow
+            QuickSort(startIndex, leftPointer - 1, inAry);
+            QuickSort(leftPointer + 1, endIndex, inAry);
         }
 
         private void Switch(int firstIndex, int secondIndex, int[] inAry)
         {
-            (inAry[secondIndex], inAry[firstIndex]) = (inAry[firstIndex], inAry[secondIndex]);
+            //(inAry[secondIndex], inAry[firstIndex]) = (inAry[firstIndex], inAry[secondIndex]);
+            int temp = inAry[firstIndex];
+            inAry[firstIndex] = inAry[secondIndex];
+            inAry[secondIndex] = temp;      
         }
 
         //TODO:  Fix bug where sometimes the last item isn't being swapped as expected, first pass through with my sample array
         //fails to swap the last item as needed.  Not putting higher items to the right.  This appears to happen a few times in 
         //my sample array, causing the last few items to be out of order.
-        private void Partition(int startIndex, int endIndex, int pivot, int[] inAry)
+        private int Partition(int startIndex, int endIndex, int pivot, int[] inAry)
         {
             //perform the partitioning here, loop through the array segment from both ends, putting values higher than the pivot to the right
             //and values lower than the pivot to the left.
@@ -97,9 +105,11 @@ namespace sorting_algorithms.Quick
                 Switch(leftIndex, rightIndex, inAry);
             }
 
-            //Send the left and right sections through the Quicksorting flow
-            QuickSort(startIndex, leftIndex - 1, inAry);
-            QuickSort(leftIndex + 1, endIndex, inAry);
+            //Added this, someitems weren't being swapped as expected, this addition to the original attempt checks to see if the endIndex is less than the leftIndex point
+            //in the array, if so swaps and returns left index.  Else we return the endIndex as the left pointer, this part I'm not sure why it works.
+            if (inAry[leftIndex] > inAry[endIndex]) Switch(leftIndex, endIndex, inAry);
+
+            return leftIndex;
         }
     }
 }
