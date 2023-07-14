@@ -28,7 +28,7 @@ namespace sorting_algorithms.Quick
         /// <exception cref="NotImplementedException"></exception>
         public int[] Ascending(int[] inAry)
         {
-            QuickSort(inAry);
+            QuickSort(inAry, true);
             return inAry;
         }
 
@@ -40,7 +40,8 @@ namespace sorting_algorithms.Quick
         /// <exception cref="NotImplementedException"></exception>
         public int[] Descending(int[] inAry)
         {
-            throw new NotImplementedException();
+            QuickSort(inAry, false);
+            return inAry;
         }
 
         //Need functions for to create the pivot point
@@ -48,39 +49,35 @@ namespace sorting_algorithms.Quick
         //REMEMBER!!  Arrays are ref values, just need to pass around index values, 
         //modify the original input array, this will manupulate the copy that was used
         //to call into the quick sort class
-        private void QuickSort(int[] inAry){
-            QuickSort(0, inAry.Length - 1, inAry);
+        private void QuickSort(int[] inAry, bool isAsc){
+            QuickSort(0, inAry.Length - 1, inAry, isAsc);
         }
 
-        private void QuickSort(int startIndex, int endIndex, int[] inAry)
+        private void QuickSort(int startIndex, int endIndex, int[] inAry, bool isAsc)
         {
             if (startIndex >= endIndex) return;
 
             //select a pivot point, easy is to pick first or last, better on the average is to take the middle point of the array
-            //int pivotIndex = startIndex + ((endIndex - startIndex) / 2);
-            int pivot = inAry[endIndex];
-
-            //switch the pivot and the right most item
-            //Switch(pivotIndex, endIndex, inAry);
+            int pivotIndex = startIndex + ((endIndex - startIndex) / 2);
+            int pivot = inAry[pivotIndex];
+            Switch(pivotIndex, endIndex, inAry);
 
             //Create the partition and place the pivot into the correct spot
-            int leftPointer = Partition(startIndex, endIndex, pivot, inAry);
-
+            int leftPointer = Partition(startIndex, endIndex, pivot, inAry, isAsc);
 
             //Send the left and right sections through the Quicksorting flow
-            QuickSort(startIndex, leftPointer - 1, inAry);
-            QuickSort(leftPointer + 1, endIndex, inAry);
+            QuickSort(startIndex, leftPointer - 1, inAry, isAsc);
+            QuickSort(leftPointer + 1, endIndex, inAry, isAsc);
         }
 
-        private void Switch(int firstIndex, int secondIndex, int[] inAry)
+        //Switch, code analysis recommended using tuples to swap values instead of using a temp value and two additional lines of code for the
+        //array value swap
+        private static void Switch(int firstIndex, int secondIndex, int[] inAry)
         {
-            //(inAry[secondIndex], inAry[firstIndex]) = (inAry[firstIndex], inAry[secondIndex]);
-            int temp = inAry[firstIndex];
-            inAry[firstIndex] = inAry[secondIndex];
-            inAry[secondIndex] = temp;      
+            (inAry[secondIndex], inAry[firstIndex]) = (inAry[firstIndex], inAry[secondIndex]);
         }
 
-        private int Partition(int startIndex, int endIndex, int pivot, int[] inAry)
+        private static int Partition(int startIndex, int endIndex, int pivot, int[] inAry, bool isAsc)
         {
             //perform the partitioning here, loop through the array segment from both ends, putting values higher than the pivot to the right
             //and values lower than the pivot to the left.
@@ -91,20 +88,45 @@ namespace sorting_algorithms.Quick
             while (leftIndex < rightIndex)
             {
                 //Swap left and right indexes that are lower (left) or higher(right) of the pivot around until all lower are to the left and all higher are to the right
-                while(inAry[leftIndex] <= pivot && leftIndex < rightIndex){
-                    leftIndex++;
+                if (isAsc)
+                {
+                    while (inAry[leftIndex] <= pivot && leftIndex < rightIndex)
+                    {
+                        leftIndex++;
+                    }
+
+                    while (inAry[rightIndex] >= pivot && leftIndex < rightIndex)
+                    {
+                        rightIndex--;
+                    }
+                }
+                else  //Switch directionality of the value checks to sort in descending order
+                {
+                    while (inAry[leftIndex] >= pivot && leftIndex < rightIndex)
+                    {
+                        leftIndex++;
+                    }
+
+                    while (inAry[rightIndex] <= pivot && leftIndex < rightIndex)
+                    {
+                        rightIndex--;
+                    }
                 }
 
-                while (inAry[rightIndex] >= pivot && leftIndex < rightIndex){
-                    rightIndex--;
-                }
-
+                //Once the incrimenting and decrimenting have completed, swap the values at the pointers
                 Switch(leftIndex, rightIndex, inAry);
             }
 
             //Added this, someitems weren't being swapped as expected, this addition to the original attempt checks to see if the endIndex is less than the leftIndex point
             //in the array, if so swaps the endIndex value with the leftIndex value to force the missed swap.
-            if (inAry[leftIndex] > inAry[endIndex]) Switch(leftIndex, endIndex, inAry);
+            if (isAsc)
+            {
+                if (inAry[leftIndex] > inAry[endIndex]) Switch(leftIndex, endIndex, inAry);
+            }
+            else  //Switch directionality of the test for the final clean up swap for a descending order sort.
+            {
+                if (inAry[leftIndex] < inAry[endIndex]) Switch(leftIndex, endIndex, inAry);
+            }
 
             return leftIndex;
         }
