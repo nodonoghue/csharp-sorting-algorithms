@@ -48,8 +48,7 @@ namespace sorting_algorithms.Merge
         private void SplitArray(int[] arr, bool isAsc)
         {
             int arrLength = arr.Length;
-            //This method will be recursive until the left is not less than the right index, in wihch case execution will stop
-            //being recursive and allowed to end.
+            //This method will be recursive until the array length is 1
             if (arrLength > 1)
             {
                 int middleIndex = arrLength / 2;
