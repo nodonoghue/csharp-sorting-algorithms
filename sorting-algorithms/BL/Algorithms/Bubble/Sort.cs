@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using sorting_algorithms.BL.Algorithms.Interfaces;
 
 namespace sorting_algorithms.BL.Algorithms.Bubble
 {
@@ -16,33 +15,35 @@ namespace sorting_algorithms.BL.Algorithms.Bubble
     /// right on each run.  As the name suggests, the largers number (ascending order) or smallest (descending order) will 
     /// bubble up to the top (right) of the array for each run.
     /// </summary>
-    public class Sort : ISort
+    public class Sort
     {
         /// <summary>
         /// Bubble sort in ascending order
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public int[] Ascending(int[] inAry)
+        public void Ascending(int[] ary)
         {
             bool swapped;
             int swapValue;
-            for (int i = 0; i < inAry.Length - 1; i++)
+            for (int i = 0; i < ary.Length - 1; i++)
             {
                 swapped = false;
-                for (int j = 0; j < inAry.Length - 1 - i; j++)
+                for (int j = 0; j < ary.Length - 1 - i; j++)
                 {
-                    if (inAry[j] > inAry[j + 1])
+                    if (ary[j] > ary[j + 1])
                     {
                         swapped = true;
-                        swapValue = inAry[j];
-                        inAry[j] = inAry[j + 1];
-                        inAry[j + 1] = swapValue;
+                        swapValue = ary[j];
+                        ary[j] = ary[j + 1];
+                        ary[j + 1] = swapValue;
                     }
                 }
                 if (swapped == false) break;
             }
-            return inAry;
+
+            foreach (int i in ary) Console.Write(i.ToString() + ", ");
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -50,26 +51,28 @@ namespace sorting_algorithms.BL.Algorithms.Bubble
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public int[] Descending(int[] inAry)
+        public void Descending(int[] ary)
         {
             bool swapped;
             int swapValue;
-            for (int i = 0; i < inAry.Length - 1; i++)
+            for (int i = 0; i < ary.Length - 1; i++)
             {
                 swapped = false;
-                for (int j = 0; j < inAry.Length - 1 - i; j++)
+                for (int j = 0; j < ary.Length - 1 - i; j++)
                 {
-                    if (inAry[j] < inAry[j + 1])
+                    if (ary[j] < ary[j + 1])
                     {
                         swapped = true;
-                        swapValue = inAry[j];
-                        inAry[j] = inAry[j + 1];
-                        inAry[j + 1] = swapValue;
+                        swapValue = ary[j];
+                        ary[j] = ary[j + 1];
+                        ary[j + 1] = swapValue;
                     }
                 }
                 if (swapped == false) break;
             }
-            return inAry;
+
+            foreach (int i in ary) Console.Write(i.ToString() + ", ");
+            Console.WriteLine();
         }
     }
 }

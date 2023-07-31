@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using sorting_algorithms.BL.Algorithms.Interfaces;
 
 namespace sorting_algorithms.BL.Algorithms.Insertion
 {
@@ -13,7 +12,7 @@ namespace sorting_algorithms.BL.Algorithms.Insertion
     /// smaller items to the right until either at the beginning of the array or the predacessor no
     /// longer meets the criteria and replace the value.
     /// </summary>
-    internal class Sort : ISort
+    internal class Sort
     {
         /// <summary>
         /// Insertion Sort in ascending order

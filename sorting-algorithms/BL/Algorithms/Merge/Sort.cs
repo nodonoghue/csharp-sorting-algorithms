@@ -4,7 +4,6 @@ using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
-using sorting_algorithms.BL.Algorithms.Interfaces;
 
 namespace sorting_algorithms.BL.Algorithms.Merge
 {
@@ -15,7 +14,7 @@ namespace sorting_algorithms.BL.Algorithms.Merge
     /// array halves from the smallest size recursivelly back until the main array is completely sorted.  
     /// The recursion stops naturally based on the check to ensure that the arr[] argument has a lenght greater than 1.
     /// </summary>
-    internal class Sort : ISort
+    internal class Sort
     {
         /// <summary>
         /// Merge sort in ascending order

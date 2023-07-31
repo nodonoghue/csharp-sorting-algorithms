@@ -4,7 +4,6 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using sorting_algorithms.BL.Algorithms.Interfaces;
 
 namespace sorting_algorithms.BL.Algorithms.Quick
 {
@@ -19,7 +18,7 @@ namespace sorting_algorithms.BL.Algorithms.Quick
     /// logic surrounding pivot point selection.  General tutorials tend to lean towards taking
     /// the right most element as the pivot point in each iteration.
     /// </summary>
-    internal class Sort : ISort
+    internal class Sort
     {
         /// <summary>
         /// Quick sort ascending

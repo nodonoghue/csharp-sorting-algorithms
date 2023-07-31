@@ -19,5 +19,10 @@ namespace sorting_algorithms.BL
             }
             return array;
         }
+
+        internal static int[] CloneArray(int[] ary)
+        {
+            return (int[])ary.Clone();
+        }
     }
 }
