@@ -14,8 +14,12 @@ while (!Validation.isNumeric(aryLengthInput))
 }
 
 Console.WriteLine($"Array length is {aryLengthInput}");
+_ = int.TryParse(aryLengthInput, out int aryLength);
+int[] inAry = new int[aryLength];
+inAry = Utilities.GenerateArray(aryLength);
+foreach (int i in inAry) Console.Write(i.ToString() + ", ");
 
-int[] inAry = new int[10] { 9, 3, 6, 4, 8, 12, 54, 23, 1, 5 };
+//int[] inAry = new int[10] { 9, 3, 6, 4, 8, 12, 54, 23, 1, 5 };
 
 Console.Write("Starting array: ");
 foreach (int i in inAry) Console.Write(i.ToString() + ", ");
