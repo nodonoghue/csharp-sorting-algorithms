@@ -21,9 +21,9 @@ Console.Write("Starting array: ");
 foreach (int i in inAry) Console.Write(i.ToString() + ", ");
 Console.WriteLine();
 
-//TODO:  Waste memory to ensure that the input arrays are truly unique clones of the original at each point instead re-using an existing
-//array, since arrays are ref types, "ary" and "inAry" are already declared in memory for the application state and remain int he last
-//state regardless of what the appearance of being a new clone of the array appears as.
+//TODO: Implement selection of which algorithm to test, or all of them.
+//TODO: Implement selection of ascending, descending, or both
+//Above as console inputs
 
 Console.WriteLine();
 Console.WriteLine("Bubble Sort");
@@ -32,53 +32,42 @@ Console.WriteLine("-------------------------------------");
 Console.WriteLine("Asending Order:");
 bubbleSort.Ascending(Utilities.CloneArray(inAry));
 Console.WriteLine("Descending order:");
-bubbleSort.Descending(inAry);
+bubbleSort.Descending(Utilities.CloneArray(inAry));
 
 Console.WriteLine();
 Console.WriteLine("Selection Sort");
 sorting_algorithms.BL.Algorithms.Selection.Sort selectionSort = new();
 Console.WriteLine("-------------------------------------");
 Console.WriteLine("Asending Order:");
-selectionSort.Ascending(inAry);
+selectionSort.Ascending(Utilities.CloneArray(inAry));
 Console.WriteLine("Descending Order:");
-selectionSort.Descending(inAry);
+selectionSort.Descending(Utilities.CloneArray(inAry));
 
 Console.WriteLine();
 Console.WriteLine("Insertion Sort");
 sorting_algorithms.BL.Algorithms.Insertion.Sort insertionSort = new();
 Console.WriteLine("-------------------------------------");
 Console.WriteLine("Asending Order:");
-insertionSort.Ascending(inAry);
-foreach (int i in inAry) Console.Write(i.ToString() + ", ");
-Console.WriteLine();
+insertionSort.Ascending(Utilities.CloneArray(inAry));
 Console.WriteLine("Descending Order:");
-insertionSort.Descending(inAry);
-foreach (int i in inAry) Console.Write(i.ToString() + ", ");
-Console.WriteLine();
-Console.WriteLine();
+insertionSort.Descending(Utilities.CloneArray(inAry));
 
+Console.WriteLine();
 Console.WriteLine("Merge Sort");
 sorting_algorithms.BL.Algorithms.Merge.Sort mergeSort = new();
 Console.WriteLine("-------------------------------------");
 Console.WriteLine("Asending Order:");
-mergeSort.Ascending(inAry);
-foreach (int i in inAry) Console.Write(i.ToString() + ", ");
-Console.WriteLine();
+mergeSort.Ascending(Utilities.CloneArray(inAry));
 Console.WriteLine("Descending Order:");
-mergeSort.Descending(inAry);
-foreach (int i in inAry) Console.Write(i.ToString() + ", ");
-Console.WriteLine();
-Console.WriteLine();
+mergeSort.Descending(Utilities.CloneArray(inAry));
 
+Console.WriteLine();
 Console.WriteLine("Quick Sort");
 sorting_algorithms.BL.Algorithms.Quick.Sort quickSort = new();
 Console.WriteLine("-------------------------------------");
 Console.WriteLine("Asending Order:");
-quickSort.Ascending(inAry);
-foreach (int i in inAry) Console.Write(i.ToString() + ", ");
-Console.WriteLine();
+quickSort.Ascending(Utilities.CloneArray(inAry));
 Console.WriteLine("Descending Order:");
-quickSort.Descending(inAry);
-foreach (int i in inAry) Console.Write(i.ToString() + ", ");
-Console.WriteLine();
+quickSort.Descending(Utilities.CloneArray(inAry));
+
 Console.WriteLine();

@@ -19,29 +19,30 @@ namespace sorting_algorithms.BL.Algorithms.Insertion
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public int[] Ascending(int[] inAry)
+        public void Ascending(int[] iaAry)
         {
             //Iterate through the array, compare to previous item.
             //If smaller then go back until the beginning and move larger over one to the right.
             int temp;
-            for (int i = 0; i < inAry.Length; i++)
+            for (int i = 0; i < iaAry.Length; i++)
             {
-                temp = inAry[i];
+                temp = iaAry[i];
 
                 //skip the first iteration as there is no predecessors
                 if (i > 0)
                 {
                     //iterate back from i to 0 comparing [i] to each predecessor, stop when not smaller
                     int j = i - 1;
-                    while (j >= 0 && inAry[j] > temp)
+                    while (j >= 0 && iaAry[j] > temp)
                     {
-                        inAry[j + 1] = inAry[j];
+                        iaAry[j + 1] = iaAry[j];
                         j--;
                     }
-                    inAry[j + 1] = temp;
+                    iaAry[j + 1] = temp;
                 }
             }
-            return inAry;
+            foreach (int i in iaAry) Console.Write(i.ToString() + ", ");
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -49,29 +50,30 @@ namespace sorting_algorithms.BL.Algorithms.Insertion
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public int[] Descending(int[] inAry)
+        public void Descending(int[] idAry)
         {
             //Iterate through the array, compare to previous item.
             //If larger then go back until the beginning and move smaller over one to the right.
             int temp;
-            for (int i = 0; i < inAry.Length; i++)
+            for (int i = 0; i < idAry.Length; i++)
             {
-                temp = inAry[i];
+                temp = idAry[i];
 
                 //skip the first iteration as there is no predecessors
                 if (i > 0)
                 {
                     //iterate back from i to 0 comparing [i] to each predecessor, stop when not larger
                     int j = i - 1;
-                    while (j >= 0 && inAry[j] < temp)
+                    while (j >= 0 && idAry[j] < temp)
                     {
-                        inAry[j + 1] = inAry[j];
+                        idAry[j + 1] = idAry[j];
                         j--;
                     }
-                    inAry[j + 1] = temp;
+                    idAry[j + 1] = temp;
                 }
             }
-            return inAry;
+            foreach (int i in idAry) Console.Write(i.ToString() + ", ");
+            Console.WriteLine();
         }
     }
 }

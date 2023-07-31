@@ -20,26 +20,26 @@ namespace sorting_algorithms.BL.Algorithms.Selection
         /// <param name="inAry"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public void Ascending(int[] ary)
+        public void Ascending(int[] saAry)
         {
             int minIndex;
             int tempValue;
 
-            for (int i = 0; i < ary.Length - 1; i++)
+            for (int i = 0; i < saAry.Length - 1; i++)
             {
                 minIndex = i;
-                for (int j = i + 1; j < ary.Length; j++)
+                for (int j = i + 1; j < saAry.Length; j++)
                 {
-                    if (ary[j] < ary[minIndex])
+                    if (saAry[j] < saAry[minIndex])
                     {
                         minIndex = j;
                     }
                 }
-                tempValue = ary[minIndex];
-                ary[minIndex] = ary[i];
-                ary[i] = tempValue;
+                tempValue = saAry[minIndex];
+                saAry[minIndex] = saAry[i];
+                saAry[i] = tempValue;
             }
-            foreach (int i in ary) Console.Write(i.ToString() + ", ");
+            foreach (int i in saAry) Console.Write(i.ToString() + ", ");
             Console.WriteLine();
         }
 
@@ -49,27 +49,27 @@ namespace sorting_algorithms.BL.Algorithms.Selection
         /// <param name="inAry"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public void Descending(int[] ary)
+        public void Descending(int[] sdAry)
         {
             int maxIndex;
             int tempValue;
 
-            for (int i = 0; i < ary.Length - 1; i++)
+            for (int i = 0; i < sdAry.Length - 1; i++)
             {
                 maxIndex = i;
-                for (int j = i + 1; j < ary.Length; j++)
+                for (int j = i + 1; j < sdAry.Length; j++)
                 {
-                    if (ary[j] > ary[maxIndex])
+                    if (sdAry[j] > sdAry[maxIndex])
                     {
                         maxIndex = j;
                     }
                 }
-                tempValue = ary[maxIndex];
-                ary[maxIndex] = ary[i];
-                ary[i] = tempValue;
+                tempValue = sdAry[maxIndex];
+                sdAry[maxIndex] = sdAry[i];
+                sdAry[i] = tempValue;
             }
 
-            foreach (int i in ary) Console.Write(i.ToString() + ", ");
+            foreach (int i in sdAry) Console.Write(i.ToString() + ", ");
             Console.WriteLine();
         }
     }

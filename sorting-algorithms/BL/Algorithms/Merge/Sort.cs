@@ -21,10 +21,11 @@ namespace sorting_algorithms.BL.Algorithms.Merge
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public int[] Ascending(int[] inAry)
+        public void Ascending(int[] maAry)
         {
-            SplitArray(inAry, true);
-            return inAry;
+            SplitArray(maAry, true);
+            foreach (int i in maAry) Console.Write(i.ToString() + ", ");
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -32,10 +33,11 @@ namespace sorting_algorithms.BL.Algorithms.Merge
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public int[] Descending(int[] inAry)
+        public void Descending(int[] mdAry)
         {
-            SplitArray(inAry, false);
-            return inAry;
+            SplitArray(mdAry, false);
+            foreach (int i in mdAry) Console.Write(i.ToString() + ", ");
+            Console.WriteLine();
         }
 
         /// <summary>

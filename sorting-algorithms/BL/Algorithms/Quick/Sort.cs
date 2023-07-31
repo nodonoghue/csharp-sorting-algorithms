@@ -26,10 +26,11 @@ namespace sorting_algorithms.BL.Algorithms.Quick
         /// <param name="inAry"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public int[] Ascending(int[] inAry)
+        public void Ascending(int[] qaAry)
         {
-            QuickSort(inAry, true);
-            return inAry;
+            QuickSort(qaAry, true);
+            foreach (int i in qaAry) Console.Write(i.ToString() + ", ");
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -38,10 +39,11 @@ namespace sorting_algorithms.BL.Algorithms.Quick
         /// <param name="inAry"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public int[] Descending(int[] inAry)
+        public void Descending(int[] qdAry)
         {
-            QuickSort(inAry, false);
-            return inAry;
+            QuickSort(qdAry, false);
+            foreach (int i in qdAry) Console.Write(i.ToString() + ", ");
+            Console.WriteLine();
         }
 
         //Need functions for to create the pivot point

@@ -22,27 +22,27 @@ namespace sorting_algorithms.BL.Algorithms.Bubble
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public void Ascending(int[] ary)
+        public void Ascending(int[] baAry)
         {
             bool swapped;
             int swapValue;
-            for (int i = 0; i < ary.Length - 1; i++)
+            for (int i = 0; i < baAry.Length - 1; i++)
             {
                 swapped = false;
-                for (int j = 0; j < ary.Length - 1 - i; j++)
+                for (int j = 0; j < baAry.Length - 1 - i; j++)
                 {
-                    if (ary[j] > ary[j + 1])
+                    if (baAry[j] > baAry[j + 1])
                     {
                         swapped = true;
-                        swapValue = ary[j];
-                        ary[j] = ary[j + 1];
-                        ary[j + 1] = swapValue;
+                        swapValue = baAry[j];
+                        baAry[j] = baAry[j + 1];
+                        baAry[j + 1] = swapValue;
                     }
                 }
                 if (swapped == false) break;
             }
 
-            foreach (int i in ary) Console.Write(i.ToString() + ", ");
+            foreach (int i in baAry) Console.Write(i.ToString() + ", ");
             Console.WriteLine();
         }
 
@@ -51,27 +51,27 @@ namespace sorting_algorithms.BL.Algorithms.Bubble
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public void Descending(int[] ary)
+        public void Descending(int[] bdAry)
         {
             bool swapped;
             int swapValue;
-            for (int i = 0; i < ary.Length - 1; i++)
+            for (int i = 0; i < bdAry.Length - 1; i++)
             {
                 swapped = false;
-                for (int j = 0; j < ary.Length - 1 - i; j++)
+                for (int j = 0; j < bdAry.Length - 1 - i; j++)
                 {
-                    if (ary[j] < ary[j + 1])
+                    if (bdAry[j] < bdAry[j + 1])
                     {
                         swapped = true;
-                        swapValue = ary[j];
-                        ary[j] = ary[j + 1];
-                        ary[j + 1] = swapValue;
+                        swapValue = bdAry[j];
+                        bdAry[j] = bdAry[j + 1];
+                        bdAry[j + 1] = swapValue;
                     }
                 }
                 if (swapped == false) break;
             }
 
-            foreach (int i in ary) Console.Write(i.ToString() + ", ");
+            foreach (int i in bdAry) Console.Write(i.ToString() + ", ");
             Console.WriteLine();
         }
     }
