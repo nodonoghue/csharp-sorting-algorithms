@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.ExceptionServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace sorting_algorithms.BL.Algorithms.Merge
+﻿namespace sorting_algorithms.BL.Algorithms.Merge
 {
     /// <summary>
     /// The merge sort is fairly confusing until thought of recursively, think divide and conquer, over many iterations.
@@ -21,11 +14,9 @@ namespace sorting_algorithms.BL.Algorithms.Merge
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public void Ascending(int[] maAry)
+        public static void Ascending(int[] maAry)
         {
             SplitArray(maAry, true);
-            foreach (int i in maAry) Console.Write(i.ToString() + ", ");
-            Console.WriteLine();
         }
 
         /// <summary>
@@ -33,11 +24,9 @@ namespace sorting_algorithms.BL.Algorithms.Merge
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public void Descending(int[] mdAry)
+        public static void Descending(int[] mdAry)
         {
             SplitArray(mdAry, false);
-            foreach (int i in mdAry) Console.Write(i.ToString() + ", ");
-            Console.WriteLine();
         }
 
         /// <summary>
@@ -47,7 +36,7 @@ namespace sorting_algorithms.BL.Algorithms.Merge
         /// <param name="inAry"></param>
         /// <param name="leftIndex"></param>
         /// <param name="rightIndex"></param>
-        private void SplitArray(int[] arr, bool isAsc)
+        private static void SplitArray(int[] arr, bool isAsc)
         {
             int arrLength = arr.Length;
             //This method will be recursive until the array length is 1
@@ -85,7 +74,7 @@ namespace sorting_algorithms.BL.Algorithms.Merge
         /// <param name="leftArray"></param>
         /// <param name="rightArray"></param>
         /// <param name="isAsc"></param>
-        private void MergeSort(int[] arr, int[] leftArray, int[] rightArray, bool isAsc)
+        private static void MergeSort(int[] arr, int[] leftArray, int[] rightArray, bool isAsc)
         {
             int li = 0, ri = 0, mi = 0;
 

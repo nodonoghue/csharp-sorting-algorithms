@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace sorting_algorithms.BL
+﻿namespace sorting_algorithms.BL
 {
     internal static class Utilities
     {
         internal static int[] GenerateArray(int aryLength)
         {
-            Random rand = new Random();
+            Random rand = new();
             int[] array = new int[aryLength];
             for (int i = 0; i < aryLength; i++)
             {
@@ -23,6 +16,14 @@ namespace sorting_algorithms.BL
         internal static int[] CloneArray(int[] ary)
         {
             return (int[])ary.Clone();
+        }
+
+        internal static void OutputResults(int[] inAry, string sortType, string sortDirection)
+        {
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine($"{sortType} {sortDirection}");
+            foreach (int i in inAry) Console.Write(i.ToString() + ", ");
+            Console.WriteLine();
         }
     }
 }

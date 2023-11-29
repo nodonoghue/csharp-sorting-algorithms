@@ -20,7 +20,7 @@ namespace sorting_algorithms.BL.Algorithms.Selection
         /// <param name="inAry"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public void Ascending(int[] saAry)
+        public static void Ascending(int[] saAry)
         {
             int minIndex;
             int tempValue;
@@ -39,8 +39,6 @@ namespace sorting_algorithms.BL.Algorithms.Selection
                 saAry[minIndex] = saAry[i];
                 saAry[i] = tempValue;
             }
-            foreach (int i in saAry) Console.Write(i.ToString() + ", ");
-            Console.WriteLine();
         }
 
         /// <summary>
@@ -49,7 +47,7 @@ namespace sorting_algorithms.BL.Algorithms.Selection
         /// <param name="inAry"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public void Descending(int[] sdAry)
+        public static void Descending(int[] sdAry)
         {
             int maxIndex;
             int tempValue;
@@ -68,9 +66,6 @@ namespace sorting_algorithms.BL.Algorithms.Selection
                 sdAry[maxIndex] = sdAry[i];
                 sdAry[i] = tempValue;
             }
-
-            foreach (int i in sdAry) Console.Write(i.ToString() + ", ");
-            Console.WriteLine();
         }
     }
 }

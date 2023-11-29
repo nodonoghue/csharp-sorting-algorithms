@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace sorting_algorithms.BL.Algorithms.Insertion
+﻿namespace sorting_algorithms.BL.Algorithms.Insertion
 {
     /// <summary>
     /// Insertion Sort:  Iterate through the loop, looking at predecesors to see if larger or smaller
@@ -19,7 +13,7 @@ namespace sorting_algorithms.BL.Algorithms.Insertion
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public void Ascending(int[] iaAry)
+        public static void Ascending(int[] iaAry)
         {
             //Iterate through the array, compare to previous item.
             //If smaller then go back until the beginning and move larger over one to the right.
@@ -41,8 +35,6 @@ namespace sorting_algorithms.BL.Algorithms.Insertion
                     iaAry[j + 1] = temp;
                 }
             }
-            foreach (int i in iaAry) Console.Write(i.ToString() + ", ");
-            Console.WriteLine();
         }
 
         /// <summary>
@@ -50,7 +42,7 @@ namespace sorting_algorithms.BL.Algorithms.Insertion
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public void Descending(int[] idAry)
+        public static void Descending(int[] idAry)
         {
             //Iterate through the array, compare to previous item.
             //If larger then go back until the beginning and move smaller over one to the right.
@@ -72,8 +64,6 @@ namespace sorting_algorithms.BL.Algorithms.Insertion
                     idAry[j + 1] = temp;
                 }
             }
-            foreach (int i in idAry) Console.Write(i.ToString() + ", ");
-            Console.WriteLine();
         }
     }
 }

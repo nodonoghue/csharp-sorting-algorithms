@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace sorting_algorithms.BL.Algorithms.Bubble
+﻿namespace sorting_algorithms.BL.Algorithms.Bubble
 {
     /// <summary>
     /// The bubble sort works through the use of a nested loop.  The outer loop iterates through each item in the array (n) to
@@ -22,7 +16,7 @@ namespace sorting_algorithms.BL.Algorithms.Bubble
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public void Ascending(int[] baAry)
+        public static void Ascending(int[] baAry)
         {
             bool swapped;
             int swapValue;
@@ -41,9 +35,6 @@ namespace sorting_algorithms.BL.Algorithms.Bubble
                 }
                 if (swapped == false) break;
             }
-
-            foreach (int i in baAry) Console.Write(i.ToString() + ", ");
-            Console.WriteLine();
         }
 
         /// <summary>
@@ -51,7 +42,7 @@ namespace sorting_algorithms.BL.Algorithms.Bubble
         /// </summary>
         /// <param name="inAry"></param>
         /// <returns></returns>
-        public void Descending(int[] bdAry)
+        public static void Descending(int[] bdAry)
         {
             bool swapped;
             int swapValue;
@@ -70,9 +61,6 @@ namespace sorting_algorithms.BL.Algorithms.Bubble
                 }
                 if (swapped == false) break;
             }
-
-            foreach (int i in bdAry) Console.Write(i.ToString() + ", ");
-            Console.WriteLine();
         }
     }
 }

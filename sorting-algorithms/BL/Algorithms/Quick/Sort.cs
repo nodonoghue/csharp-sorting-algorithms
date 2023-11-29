@@ -26,11 +26,9 @@ namespace sorting_algorithms.BL.Algorithms.Quick
         /// <param name="inAry"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public void Ascending(int[] qaAry)
+        public static void Ascending(int[] qaAry)
         {
             QuickSort(qaAry, true);
-            foreach (int i in qaAry) Console.Write(i.ToString() + ", ");
-            Console.WriteLine();
         }
 
         /// <summary>
@@ -39,11 +37,9 @@ namespace sorting_algorithms.BL.Algorithms.Quick
         /// <param name="inAry"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public void Descending(int[] qdAry)
+        public static void Descending(int[] qdAry)
         {
             QuickSort(qdAry, false);
-            foreach (int i in qdAry) Console.Write(i.ToString() + ", ");
-            Console.WriteLine();
         }
 
         //Need functions for to create the pivot point
@@ -51,12 +47,12 @@ namespace sorting_algorithms.BL.Algorithms.Quick
         //REMEMBER!!  Arrays are ref values, just need to pass around index values, 
         //modify the original input array, this will manupulate the copy that was used
         //to call into the quick sort class
-        private void QuickSort(int[] inAry, bool isAsc)
+        private static void QuickSort(int[] inAry, bool isAsc)
         {
             QuickSort(0, inAry.Length - 1, inAry, isAsc);
         }
 
-        private void QuickSort(int startIndex, int endIndex, int[] inAry, bool isAsc)
+        private static void QuickSort(int startIndex, int endIndex, int[] inAry, bool isAsc)
         {
             if (startIndex >= endIndex) return;
 
